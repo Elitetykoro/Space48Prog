@@ -77,17 +77,17 @@ public class Items : MonoBehaviour
 
             if (items[activeItemIndex] == Color.blue)
             {
-                StartCoroutine(text.ShowMessage(" +  Move Speed"));
+                StartCoroutine(text.ShowMessage(" +  Move Speed",3f));
                 shipMovement.moveSpeed += 5;
             }
             else if (items[activeItemIndex] == Color.red)
             {
-                StartCoroutine(text.ShowMessage(" + Fire Rate"));
+                StartCoroutine(text.ShowMessage(" + Fire Rate", 3f));
                 shooting.cooldownTime -= 0.1f;
             }
             else if (items[activeItemIndex] == Color.green)
             {
-                StartCoroutine(text.ShowMessage(" + Rotation Speed"));
+                StartCoroutine(text.ShowMessage(" + Rotation Speed", 3f));
                 shipMovement.rotationSpeed += 10;
             }
             items.RemoveAt(activeItemIndex);

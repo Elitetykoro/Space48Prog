@@ -9,17 +9,19 @@ public class ShipMovement : MonoBehaviour
 {
     [SerializeField] public float moveSpeed = 5f;
     [SerializeField] public float rotationSpeed = 25f;
+    Move move;
+    private void Start()
+    {
+        move = GetComponent<Move>();
+    }
     void Update()
     {
-        Move();   
+        if (Input.GetAxis("Vertical") != 0)
+        {
+            move.Moving(moveSpeed, Input.GetAxisRaw("Vertical"));
+        }
+
         Rotate();
-
-    }
-
-    void Move() {
-
-        transform.position = transform.position + transform.forward * moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime;
-        
     }
     void Rotate()
     {
